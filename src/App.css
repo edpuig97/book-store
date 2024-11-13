@@ -14,6 +14,31 @@ body {
   }
 }
 
+.searchBox {
+  margin-bottom: 32px;
+  background-color: rgb(247, 240, 234);
+  border-radius: 16px;
+  padding: 0px 16px 16px;
+}
+
+.form-header h2 {
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.form-row {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(

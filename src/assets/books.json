@@ -208,6 +208,189 @@
           "otherBooks": ["El horror de Dunwich", "En las montañas de la locura"]
         }
       }
+    },
+    {
+      "book": {
+        "title": "Cien años de soledad",
+        "pages": 432,
+        "genre": "Realismo mágico",
+        "cover": "https://m.media-amazon.com/images/I/A1lNJP8sC6L._AC_UY218_.jpg",
+        "synopsis": "La saga de la familia Buendía a través de varias generaciones en Macondo.",
+        "year": 1967,
+        "ISBN": "978-0060883287",
+        "author": {
+          "name": "Gabriel García Márquez",
+          "otherBooks": [
+            "El amor en los tiempos del cólera",
+            "Crónica de una muerte anunciada"
+          ]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "La sombra del viento",
+        "pages": 506,
+        "genre": "Misterio",
+        "cover": "https://m.media-amazon.com/images/I/81CEi-3PbBL._AC_UY436_FMwebp_QL65_.jpg",
+        "synopsis": "Un joven descubre un libro olvidado que desencadena una intriga misteriosa en Barcelona.",
+        "year": 2001,
+        "ISBN": "978-0143034902",
+        "author": {
+          "name": "Carlos Ruiz Zafón",
+          "otherBooks": ["El juego del ángel", "El prisionero del cielo"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El principito",
+        "pages": 96,
+        "genre": "Fábula",
+        "cover": "https://m.media-amazon.com/images/I/714Hvb52n-L._AC_UY218_.jpg",
+        "synopsis": "Un piloto conoce a un príncipe que viaja por diferentes planetas, explorando la naturaleza humana.",
+        "year": 1943,
+        "ISBN": "978-0156012195",
+        "author": {
+          "name": "Antoine de Saint-Exupéry",
+          "otherBooks": ["Vuelo nocturno", "Tierra de hombres"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Sapiens: De animales a dioses",
+        "pages": 498,
+        "genre": "No ficción",
+        "cover": "https://m.media-amazon.com/images/I/811PTyrckTL._AC_UY436_FMwebp_QL65_.jpg",
+        "synopsis": "Una historia breve de la humanidad y su evolución.",
+        "year": 2014,
+        "ISBN": "978-0062316110",
+        "author": {
+          "name": "Yuval Noah Harari",
+          "otherBooks": ["Homo Deus", "21 lecciones para el siglo XXI"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "La metamorfosis",
+        "pages": 64,
+        "genre": "Ficción existencial",
+        "cover": "https://m.media-amazon.com/images/I/612NA7i9u8L._AC_UY218_.jpg",
+        "synopsis": "Un hombre se despierta convertido en un insecto gigante, explorando la alienación y la condición humana.",
+        "year": 1915,
+        "ISBN": "978-0486284637",
+        "author": {
+          "name": "Franz Kafka",
+          "otherBooks": ["El proceso", "La colonia penitenciaria"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Rayuela",
+        "pages": 576,
+        "genre": "Novela experimental",
+        "cover": "https://m.media-amazon.com/images/I/313ZmAcZz8L._AC_UY218_.jpg",
+        "synopsis": "Una novela que puede leerse de múltiples formas, desafiando las estructuras narrativas tradicionales.",
+        "year": 1963,
+        "ISBN": "978-0307474556",
+        "author": {
+          "name": "Julio Cortázar",
+          "otherBooks": ["Los premios", "Bestiario"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El alquimista",
+        "pages": 208,
+        "genre": "Ficción filosófica",
+        "cover": "https://m.media-amazon.com/images/I/81MOnJT4YiL._AC_UY436_FMwebp_QL65_.jpg",
+        "synopsis": "Un pastor andaluz emprende un viaje para encontrar un tesoro y descubrir su destino personal.",
+        "year": 1988,
+        "ISBN": "978-0062315007",
+        "author": {
+          "name": "Paulo Coelho",
+          "otherBooks": ["Brida", "El demonio y la señorita Prym"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "La insoportable levedad del ser",
+        "pages": 314,
+        "genre": "Novela filosófica",
+        "cover": "https://m.media-amazon.com/images/I/61TrjSfkwOL._AC_UY218_.jpg",
+        "synopsis": "Una exploración de las relaciones humanas, el amor y la existencia en la Praga de 1968.",
+        "year": 1984,
+        "ISBN": "978-0060932171",
+        "author": {
+          "name": "Milan Kundera",
+          "otherBooks": ["La broma", "La inmortalidad"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "El perfume",
+        "pages": 352,
+        "genre": "Novela histórica",
+        "cover": "https://m.media-amazon.com/images/I/61x0tM37PdL._AC_UY218_.jpg",
+        "synopsis": "La historia de Jean-Baptiste Grenouille, un asesino con un extraordinario sentido del olfato.",
+        "year": 1985,
+        "ISBN": "978-0307278341",
+        "author": {
+          "name": "Patrick Süskind",
+          "otherBooks": ["El contrabajo", "La paloma"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Martian Chronicles",
+        "pages": 222,
+        "genre": "Ciencia ficción",
+        "cover": "https://m.media-amazon.com/images/I/613HKMdb1rL._AC_UY218_.jpg",
+        "synopsis": "Una colección de historias interconectadas sobre la colonización de Marte.",
+        "year": 1950,
+        "ISBN": "978-0062509413",
+        "author": {
+          "name": "Ray Bradbury",
+          "otherBooks": ["Fahrenheit 451", "El hombre ilustrado"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Los juegos del hambre",
+        "pages": 374,
+        "genre": "Distopía",
+        "cover": "https://m.media-amazon.com/images/I/71N9ipxBq-L._AC_UY218_.jpg",
+        "synopsis": "En un futuro post-apocalíptico, jóvenes son forzados a competir en un brutal reality show de supervivencia.",
+        "year": 2008,
+        "ISBN": "978-0439023481",
+        "author": {
+          "name": "Suzanne Collins",
+          "otherBooks": ["En llamas", "Sinsajo"]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "La carretera",
+        "pages": 241,
+        "genre": "Ficción postapocalíptica",
+        "cover": "https://m.media-amazon.com/images/I/91QydJGVkbL._AC_UY218_.jpg",
+        "synopsis": "Un padre y su hijo viajan a través de un mundo devastado en busca de supervivencia.",
+        "year": 2006,
+        "ISBN": "978-0307387899",
+        "author": {
+          "name": "Cormac McCarthy",
+          "otherBooks": ["No country for old men", "Meridiano de sangre"]
+        }
+      }
     }
   ]
 }

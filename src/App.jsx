@@ -1,35 +1,40 @@
 import { useState } from "react";
+import "@mantine/core/styles.css";
+import { MultiSelect, RangeSlider, MantineProvider } from "@mantine/core";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import data from "./assets/books.json";
 import { Book } from "./components/Book";
 import { BookModal } from "./components/BookModal";
-function App() {
-  const [availableBooks, setAvailableBooks] = useState(() => {
-    const availableBooksFromStorage =
-      window.localStorage.getItem("availableBooks");
-    if (availableBooksFromStorage) return JSON.parse(availableBooksFromStorage);
-    // TODO: Fetch data from API
-    window.localStorage.setItem("availableBooks", JSON.stringify(data.library));
-    return data.library;
-  });
+import { getCurrentData } from "./utils/logic";
+import { useEffect } from "react";
 
-  const [readingBooks, setReadingBooks] = useState(() => {
-    const readingBooksFromStorage = window.localStorage.getItem("readingBooks");
-    if (readingBooksFromStorage) {
-      return JSON.parse(readingBooksFromStorage);
-    }
-    // TODO: Fetch data from API
-    window.localStorage.setItem("readingBooks", JSON.stringify([]));
-    return [];
-  });
+function App() {
+  const [availableBooks, setAvailableBooks] = useState(Array(0));
+  const [readingBooks, setReadingBooks] = useState(Array(0));
+
+  useEffect(() => {
+    const availableBooksFromStorage = window.localStorage.getItem(
+      "availableBooks"
+    )
+      ? JSON.parse(window.localStorage.getItem("availableBooks"))
+      : Array(0);
+    const readingBooksFromStorage = window.localStorage.getItem("readingBooks")
+      ? JSON.parse(window.localStorage.getItem("readingBooks"))
+      : Array(0);
+    const [newAvBooks, newRdBooks] = getCurrentData(
+      data.library,
+      availableBooksFromStorage,
+      readingBooksFromStorage
+    );
+    setAvailableBooks(newAvBooks);
+    setReadingBooks(newRdBooks);
+  }, []);
 
   const [currentBook, setCurrentBook] = useState(null);
 
   const addToReadingList = (id) => {
     const newBook = availableBooks.find((b) => b.book.ISBN === id);
-    console.log(newBook);
-    console.log(readingBooks);
-    console.log([...readingBooks, newBook]);
     const newReadingBooks = [...readingBooks, newBook];
     const newAvailableBooks = availableBooks.filter((b) => b.book.ISBN !== id);
     window.localStorage.setItem(
@@ -62,14 +67,6 @@ function App() {
     setReadingBooks(newReadingBooks);
   };
 
-  const getMaxPages = () => {
-    const pages = Array(...availableBooks, ...readingBooks);
-    console.log(pages);
-    console.log(availableBooks);
-  };
-
-  getMaxPages();
-
   const viewMore = (book) => {
     setCurrentBook(book);
   };
@@ -79,13 +76,42 @@ function App() {
   };
 
   return (
-    <>
+    <MantineProvider>
       <header>
         <h1>Nuestro catálogo:</h1>
       </header>
 
       <main>
-        <aside></aside>
+        <aside className="searchBox">
+          <header className="form-header">
+            <h2>Buscar</h2>
+          </header>
+          <form id="searchForm">
+            <div className="form-fields">
+              <div className="form-row">
+                <label htmlFor="genre">Autor:</label>
+                <MultiSelect />
+              </div>
+              <div className="form-row">
+                <label htmlFor="genre">Género:</label>
+                <MultiSelect />
+              </div>
+
+              <div className="form-row">
+                <label className="label-range" htmlFor="pages">
+                  Número de páginas:
+                </label>
+                <RangeSlider
+                  minRange={1}
+                  min={1}
+                  max={1000}
+                  step={1}
+                  defaultValue={[1, 1000]}
+                />
+              </div>
+            </div>
+          </form>
+        </aside>
         <div className="container">
           {" "}
           {availableBooks?.length > 0 && (
@@ -147,7 +173,8 @@ function App() {
       <footer>
         <p>© 2023 - Book Store</p>
       </footer>
-    </>
+      <Analytics />
+    </MantineProvider>
   );
 }
 
