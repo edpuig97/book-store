@@ -3,35 +3,14 @@ import "@mantine/core/styles.css";
 import { MultiSelect, RangeSlider, MantineProvider } from "@mantine/core";
 import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
-import data from "./assets/books.json";
 import { Book } from "./components/Book";
 import { BookModal } from "./components/BookModal";
-import { getCurrentData } from "./utils/logic";
-import { useEffect } from "react";
+import { useCurrentBooks } from "./hooks/useCurrentBooks";
 
 function App() {
-  const [availableBooks, setAvailableBooks] = useState(Array(0));
-  const [readingBooks, setReadingBooks] = useState(Array(0));
-
-  useEffect(() => {
-    const availableBooksFromStorage = window.localStorage.getItem(
-      "availableBooks"
-    )
-      ? JSON.parse(window.localStorage.getItem("availableBooks"))
-      : Array(0);
-    const readingBooksFromStorage = window.localStorage.getItem("readingBooks")
-      ? JSON.parse(window.localStorage.getItem("readingBooks"))
-      : Array(0);
-    const [newAvBooks, newRdBooks] = getCurrentData(
-      data.library,
-      availableBooksFromStorage,
-      readingBooksFromStorage
-    );
-    setAvailableBooks(newAvBooks);
-    setReadingBooks(newRdBooks);
-  }, []);
-
   const [currentBook, setCurrentBook] = useState(null);
+  const [availableBooks, readingBooks, updateAvailableReadingBooks] =
+    useCurrentBooks();
 
   const addToReadingList = (id) => {
     const newBook = availableBooks.find((b) => b.book.ISBN === id);
@@ -45,8 +24,10 @@ function App() {
       "availableBooks",
       JSON.stringify(newAvailableBooks)
     );
-    setAvailableBooks(newAvailableBooks);
-    setReadingBooks(newReadingBooks);
+    updateAvailableReadingBooks({
+      available: newAvailableBooks,
+      reading: newReadingBooks,
+    });
   };
 
   const removeFromReadingList = (id) => {
@@ -63,8 +44,22 @@ function App() {
       "availableBooks",
       JSON.stringify(newAvailableBooks)
     );
-    setAvailableBooks(newAvailableBooks);
-    setReadingBooks(newReadingBooks);
+    updateAvailableReadingBooks({
+      available: newAvailableBooks,
+      reading: newReadingBooks,
+    });
+  };
+
+  const emptyReadingList = () => {
+    window.localStorage.setItem("readingBooks", []);
+    window.localStorage.setItem(
+      "availableBooks",
+      JSON.stringify([...availableBooks, ...readingBooks])
+    );
+    updateAvailableReadingBooks({
+      available: [...availableBooks, ...readingBooks],
+      reading: [],
+    });
   };
 
   const viewMore = (book) => {
@@ -146,6 +141,12 @@ function App() {
             <section className="reading-books" id="readingList">
               <header>
                 <h2>Lista de lectura</h2>
+                <button
+                  className="empty-reading-button"
+                  onClick={emptyReadingList}
+                >
+                  Vaciar mi lista de lectura
+                </button>
               </header>
               <main className="books-list">
                 {readingBooks.map((b) => {

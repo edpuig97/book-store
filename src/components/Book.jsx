@@ -46,10 +46,12 @@ export const Book = ({
         <li>Páginas: {book.pages}</li>
       </ul> */}
 
-      <div>
+      <div onClick={hanldleViewMoreClick}>
         <img src={book.cover} alt={`Poster del libro ${book.title}`} />
       </div>
-      <button onClick={handleClick}>{buttonText}</button>
+      <button className="book-button" onClick={handleClick}>
+        {buttonText}
+      </button>
     </article>
   );
 };
