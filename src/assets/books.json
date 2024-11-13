@@ -391,6 +391,62 @@
           "otherBooks": ["No country for old men", "Meridiano de sangre"]
         }
       }
+    },
+    {
+      "book": {
+        "title": "El nombre del viento",
+        "pages": 662,
+        "genre": "Fantasía",
+        "cover": "https://m.media-amazon.com/images/I/516V6LnmQ+L._AC_UY218_.jpg",
+        "synopsis": "La historia de Kvothe, un legendario mago, músico y ladrón, narrada desde una posada en el presente mientras oscuros sucesos se desarrollan a su alrededor.",
+        "year": 2007,
+        "ISBN": "978-0756404741",
+        "author": {
+          "name": "Patrick Rothfuss",
+          "otherBooks": [
+            "El temor de un hombre sabio",
+            "La música del silencio"
+          ]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "Fundación",
+        "pages": 255,
+        "genre": "Ciencia ficción",
+        "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1417900846i/29579.jpg",
+        "synopsis": "En un imperio galáctico en decadencia, un científico desarrolla una ciencia para predecir y alterar el futuro de la humanidad a gran escala.",
+        "year": 1951,
+        "ISBN": "978-0553293357",
+        "author": {
+          "name": "Isaac Asimov",
+          "otherBooks": [
+            "Fundación e Imperio",
+            "Segunda Fundación",
+            "Yo, Robot"
+          ]
+        }
+      }
+    },
+    {
+      "book": {
+        "title": "American Gods",
+        "pages": 465,
+        "genre": "Fantasía contemporánea",
+        "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1258417001i/4407.jpg",
+        "synopsis": "Un ex-convicto se ve envuelto en una guerra entre los antiguos dioses mitológicos y los nuevos dioses de la tecnología y el progreso en América.",
+        "year": 2001,
+        "ISBN": "978-0380973651",
+        "author": {
+          "name": "Neil Gaiman",
+          "otherBooks": [
+            "Buenos presagios",
+            "Neverwhere",
+            "El libro del cementerio"
+          ]
+        }
+      }
     }
   ]
 }
