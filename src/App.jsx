@@ -142,7 +142,7 @@ function App() {
               <header>
                 <h2>Lista de lectura</h2>
                 <button
-                  className="empty-reading-button"
+                  className="empty-reading-btn"
                   onClick={emptyReadingList}
                 >
                   Vaciar mi lista de lectura
